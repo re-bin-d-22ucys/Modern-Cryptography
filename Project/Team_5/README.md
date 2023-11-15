@@ -17,6 +17,19 @@ Mentor: Mr. Ramaguru Radhakrishnan, Asst. Professor (Senior Grade)
 
 ### Background
 
+###### Hash-One
+
+
+###### Scheme
+- Sponge construction:
+  - Sponge Function
+- Transitional permutation:
+  - Two NFSRs
+- Update Function:
+  - Two 4-Variable Non-Linear Boolean functions
+  - A Linear function in three variables
+
+ ###### Working
 
 
 ### Deliverables
