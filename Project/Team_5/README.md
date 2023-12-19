@@ -17,10 +17,10 @@ Mentor: Mr. Ramaguru Radhakrishnan, Asst. Professor (Senior Grade)
 
 ### Background
 
-###### Hash-One
+#### Hash-One
 
 
-###### Scheme
+##### Scheme
 - Sponge construction:
   - Sponge Function
 - Transitional permutation:
@@ -28,8 +28,16 @@ Mentor: Mr. Ramaguru Radhakrishnan, Asst. Professor (Senior Grade)
 - Update Function:
   - Two 4-Variable Non-Linear Boolean functions
   - A Linear function in three variables
+ 
+  <p align="center">
+   <img src="ui/images/Three_stages.png" width=420/>
+ </p>  
 
- ###### Working
+ ##### Working 
+
+ <p align="center">
+   <img src="ui/images/pseudo_code_diagram.png" width=1000 />
+ </p>
 
 
 ### Deliverables
