@@ -9,7 +9,7 @@
 |:-------:|
 | Adarsh R K | 
 | Adithya N S | 
-| Agil Prasanna |
+| Agil Prasanna P |
 | Aishwarya S |
 
 
