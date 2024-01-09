@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Hight Cipher</title>
+</head>
+
+<body>
+    <div class="toggle-container">
+        <button class="toggle-btn">&#9776; OPTIONS </button>
+        <div class="dropdown">
+            <div class="dropdown-content">
+                <a href="../index.html">HIGHT CLASSIC</a>
+                <a href="../html/ECBmode.html">ECB mode</a>
+                <a href="../html/CBCmode.html">CBC mode</a>
+                <a href="../html/plain_ECBmode.html">Plaintext ECB</a>
+                <a href="../html/plain_CBCmode.html">Plaintext CBC</a>
+                <a href="../html/about.html">About &amp; Reference</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+         <h1 class="header-title">ABOUT & REFERENCE</h1>
+    </header>
+
+    <section id="about">
+        <h2>About HIGHT</h2>
+        <p>HIGHT is an acronym for HIGh security and light weigHT encryption algorithm. It's designed for low-resource devices and offers strong security with its 64-bit block size and 128-bit keys.</p>
+        <p>The algorithm's core components include round functions, key schedule, encryption, and decryption processes.</p>
+    
+        <h3>Round Functions</h3>
+        <p>HIGHT utilizes two round functions: F0 and F1. Both involve circular shifts and XOR operations on 8-bit values.</p>
+        <ul>
+          <li>F0(x) = (x<<<1) [^] (x<<<2) [^] (x<<<7)</li>
+          <li>F1(x) = (x<<<3) [^] (x<<<4) [^] (x<<<6)</li>
+        </ul>
+    
+        <h3>Key Schedule</h3>
+        <p>HIGHT generates 128 subkeys and a whitening key, all derived from the 128-bit master key using a dedicated key scheduling algorithm.</p>
+    
+        <h3>Encryption</h3>
+        <p>Whitening enhances the cipher's diffusion and confusion properties, increasing its resistance to attacks. The plaintext undergoes 32 rounds, utilizing four subkeys and round functions in each.</p>
+    
+        <h3>Decryption</h3>
+        <p>Decryption reverses the encryption process to recover the original plaintext. All key generation and round functions remain the same.</p>
+    <div class="modes">
+        <h3>Modes of Operation</h3>
+        <p>HIGHT supports two modes of operation:</p>
+    
+        <h4>Electronic Codebook (ECB)</h4>
+        <p>The plaintext is divided into 64-bit blocks, each encrypted independently with the same key. The resulting ciphertext blocks are then concatenated.</p>
+        <p>OneAndZeroes Padding is used to ensure block size consistency.</p>
+    
+        <h4>Cipher Block Chaining (CBC)</h4>
+        <p>Similar to ECB, plaintext is divided into 64-bit blocks. However, each block is XORed with the previous ciphertext block before encryption, creating a chain of dependencies.</p>
+        <p>An Initialization Vector (IV) is used to start the chain. This website uses 00 00 00 00 00 00 00 00 as the default IV.</p>
+        <p>OneAndZeroes Padding is also used with CBC.</p>
+      </div>
+      <div>
+        <h3>Reference</h3>
+        <ul>
+          <li><a href="https://datatracker.ietf.org/doc/html/draft-kisa-hight-00" class="links">The HIGHT Encryption Algorithm</a></li>
+          <li><a href="https://www.geeksforgeeks.org/block-cipher-modes-of-operation/" class="links">Modes of Operation</a></li>
+          <li><a href="https://www.cryptosys.net/pki/manpki/pki_paddingschemes.html" class="links">Padding</a></li>
+        </ul>
+      </div>
+      </section>
+
+  <div class="footer">
+        Copyright © 2023.<br>
+        Amal Ritessh A P, Ananth R, Anaswara Suresh .M .K, Arul Sujith S<br>
+        II year B.Tech CSE(CYS)<br>
+        Part of 20CYS202 - User Interface Design and 20CYS205 - Modern cryptography<br>
+        Amrita Vishwa Vidyapeetham, Coimbatore.
+  </div>
+    
+</body>
+
+</html>

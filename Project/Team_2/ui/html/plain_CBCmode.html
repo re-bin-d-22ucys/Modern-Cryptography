@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Hight Cipher</title>
+</head>
+
+<body>
+    <div class="toggle-container">
+        <button class="toggle-btn">&#9776; OPTIONS </button>
+        <div class="dropdown">
+            <div class="dropdown-content">
+                <a href="../index.html">HIGHT CLASSIC</a>
+                <a href="../html/ECBmode.html">ECB mode</a>
+                <a href="../html/CBCmode.html">CBC mode</a>
+                <a href="../html/plain_ECBmode.html">Plaintext ECB</a>
+                <a href="../html/plain_CBCmode.html">Plaintext CBC</a>
+                <a href="../html/about.html">About &amp; Reference</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="header">
+         <h1 class="header-title">Plaintext CBC MODE</h1>
+    </header>
+
+    <div class="container">
+        <div class="left-panel">
+            <h2>Encryption</h2>
+            <div class="input-group">
+                <label for="plaintext">Plain Text:</label>
+                <input type="text" id="encryptPlainText" placeholder="Enter plaintext...">
+            </div>
+            <div class="input-group">
+                <label for="encryptKey">Key (128-bit hexadecimal):</label>
+                <input type="text" id="encryptKey" placeholder="Enter key...">
+            </div>
+            <button class="action-button" onclick="start_enc()">Encrypt</button>
+            <div class="display" id="encryptionResult"></div>
+        </div>
+
+        <div class="separator"></div>
+
+        <div class="right-panel">
+            <h2>Decryption</h2>
+            <div class="input-group">
+                <label for="ciphertext">Cipher Text:</label>
+                <input type="text" id="cipherText" placeholder="Enter ciphertext...">
+            </div>
+            <div class="input-group">
+                <label for="decryptKey">Key (128-bit hexadecimal):</label>
+                <input type="text" id="decryptKey" placeholder="Enter key...">
+            </div>
+            <button class="action-button" onclick="start_dec()">Decrypt</button>
+            <div class="display" id="decryptionResult"></div>
+        </div>
+    </div>
+    <div class="about">
+    <center><div class="info-box">
+        <p>
+          <strong>Hight CBC Cipher Information</strong><br>
+          - The user input for the key should be 128 bits and in hexadecimal format.<br>
+          - The user input for plaintext can be of any length, both greater than or less than 64 bits, and in ASCII format.<br>
+          - Padding scheme used for this block cipher is “OneAndZeroes Padding”.
+        </p>
+      
+        <p>
+          <strong>Hexadecimal Value Input</strong><br>
+          Hexadecimal values can be input with or without spaces between the characters.<br>
+        </p>
+      
+        <p>
+          <strong>Example:</strong><br>
+          Key: 00112233445566778899aabbccddeeff<br>
+          Plaintext: this is amal<br>
+          Ciphertext: 00 29 69 3d 4f 5d 91 c9 89 73 eb cb d2 f5 d9 19
+        </p>
+
+        <p>
+            <strong>Note:</strong><br>
+            you may find this character '' at the end of Decryption Result,<br>
+            ignore it, its the padding block.
+        </p>
+      </div>
+      </center></div>
+    
+    <div class="footer">
+        Copyright © 2023.<br>
+        Amal Ritessh A P, Ananth R, Anaswara Suresh .M .K, Arul Sujith S<br>
+        II year B.Tech CSE(CYS)<br>
+        Part of 20CYS202 - User Interface Design and 20CYS205 - Modern cryptography<br>
+        Amrita Vishwa Vidyapeetham, Coimbatore.
+    </div>   
+    
+    <script src="../js/plain_cbc.js"></script>
+</body>
+
+</html>
