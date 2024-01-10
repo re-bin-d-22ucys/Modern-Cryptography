@@ -13,7 +13,7 @@
 | SHREE HARINI T  |
 
 
-Mentor: Mr. Aravind 
+Mentor: Mr. Aravind Vishnu SS
 
 
 ### Deliverables
