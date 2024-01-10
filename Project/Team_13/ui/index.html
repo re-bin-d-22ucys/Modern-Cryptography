@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Implementation of A5/1 Stream Cipher</title>
+    <link rel="stylesheet" href="css/s.css">
+</head>
+<body>
+    
+    <h1>Implementation of A5/1 Stream Cipher</h1>
+    <div class="box" id="inputBox">
+        <p><b>User 1</b></p>
+        <label for="message" >Enter The Message:</label>
+        <br><br>
+        <input type="text" id="inpmessu1" placeholder="Enter your message">
+        <br><br>
+        <button id="encryptButton" onclick="encryptu1()">Encrypt</button>
+        <button id="decryptbutton" onclick="decryptu1()">Decrypt</button>
+        <br><br>
+        <label for="output">Output:</label>
+        <br><br>
+        <input type="text" id="outmessu1" placeholder="Output">
+    </div>
+    <div class="box" id="keyBox">
+        <p>Key:</p>
+        <input type="text" id="inputKey" placeholder="Enter the key">
+        <p>Frame:</p>
+        <input type="text" id="inputFrame" placeholder="Enter the placeholder">
+        <br><br>
+        <button id="Genkey" onclick="generatekey()">Generate Key</button>
+
+
+    </div>
+    <div class="box" id="outputBox">
+        <p><b>User 2</b></p>
+        <label for="message" >Enter The Message:</label>
+        <br><br>
+        <input type="text" id="inpmessu2" placeholder="Enter your message">
+        <br><br>
+        <button id="encryptButton" onclick="encryptu2()">Encrypt</button>
+        <button id="decryptbutton" onclick="decryptu2()">Decrypt</button>
+        <br><br>
+        <label for="output">Output:</label>
+        <br><br>
+        <input type="text" id="outmessu2" placeholder="Output">
+    </div>
+    <script src="js/A51enc.js"></script>
+</body>
+<footer>
+    <h3><u>About A5/1</u></h3>
+    <p>A5/1 is a cipher developed in 1987 to protect the voice communication in mobile <br> networks according to the GSM standard. It is now regarded as broken.
+        This is a simplified simulation of the cipher <br>
+        This consists of the following steps:<br>
+        1.Generate key from 64-bit key and 22 bit frame value<br>
+        2.Encrypt The message from 1 user<br>
+        3.Decrypt the message from other user<br>
+
+        The key stream is linked to the plaintext (XOR) at the sender and thus the secret text is formed, which <br>
+        can then be transmitted. The same key stream is formed at the receiver, which is<br>
+         then linked to the secret text, in order to receive the clear text again.
+</html>
