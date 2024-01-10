@@ -13,7 +13,7 @@
 | Naren Adirthya|
 
 
-Mentor: Mr. Chungath Srinivasan
+Mentor: Mr. Chungath Srinivasan & Mr. Arvind Vishnu
 
 
 
