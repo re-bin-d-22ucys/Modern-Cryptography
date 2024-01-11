@@ -14,7 +14,7 @@
 | Rudra Sri Lakshmi |
 
 
-Mentor: Mr. Aravind
+Mentor: Mr. Aravind Vishnu SS
 
 ### Background
 
