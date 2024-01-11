@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECDSA Signature Generator</title>
+  <link rel="stylesheet" href="./css/ecdsa2.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/elliptic/6.5.3/elliptic.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+</head>
+
+<body>
+  <div id="container">
+    <h2>ECDSA Signature Generator</h2>
+    <label for="privateKey">Private Key:</label>
+    <input type="text" id="privateKey" placeholder="Enter private key">
+
+    <label for="message">Message:</label>
+    <input type="text" id="message" placeholder="Enter message">
+
+    <button id="generateBtn">Generate Signature</button>
+
+    <h3>Signature (r, s):</h3>
+    <p id="signatureOutput"></p>
+
+    <h3>Signature Verification:</h3>
+    <p id="verificationOutput"></p>
+  </div>
+
+  <script src="./js/ecdsa.js"></script>
+  </body>
+  </html>
