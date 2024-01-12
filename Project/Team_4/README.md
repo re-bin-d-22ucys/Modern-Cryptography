@@ -20,7 +20,7 @@ Mentor: Mr. Chungath Srinivasan
 
 
 ### Deliverables
-- [User Interface](https://re-bin-d-22ucys.github.io/Modern-Cryptography/Project/Team_4/RC4%20Implementation%20and%20Cryptanalysis/templates/)
+- [User Interface](https://re-bin-d-22ucys.github.io/Modern-Cryptography/Project/Team_4/RC4%20Implementation%20and%20Cryptanalysis/templates)
 - [FAQ]()
 
 
