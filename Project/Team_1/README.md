@@ -13,7 +13,7 @@
 | Aishwarya S |
 
 
-Mentor: Mr. Chungath Srinivasan 
+Mentor: Mr. Aravind Vishnu SS
 
 ### Background
 
