@@ -15,6 +15,3 @@
 
 Mentor: Mr. Praveen
 
-
-### Deliverables
-- [User Interface]()
