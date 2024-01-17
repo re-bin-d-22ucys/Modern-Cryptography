@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recovered Secret</title>
+    <style>
+h1{
+  font-weight:normal;
+  font-size:2em;
+}
+
+.wrapper{
+  width:100vw;
+  height:100vh;
+}
+
+section{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 50%;
+  height:98vh;
+  margin: auto;
+}
+
+.pageIntro{
+  font-size:3em;
+  font-weight: 900;
+  text-align:center;
+}
+
+.wrapper div{
+  height: 250px;
+}
+
+
+.reveal{
+  opacity: 1;
+  transform: none;
+  transition: opacity ease-out 500ms, transform ease-out 500ms, filter ease-out 500ms;
+}
+
+.faded_out {
+  opacity: 0;
+  transform: scale(0.8,0.8);
+  filter: blur(3px);
+}
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <section><h1 class="pageIntro reveal"><br/>Scroll to reveal the answer</h1></section>
+        <section id="one">
+          <div class="reveal faded_out">
+            <h1>Result</h1>
+            <p>Refurbished Secret: <strong>{{ result.made_secret }}</strong></p>
+            <p>Prime 1: <strong>{{ result.m0 }}</strong></p>
+            <p>Prime 2: <strong>{{ result.m1 }}</strong></p>
+            <p>Prime 3: <strong>{{ result.m2 }}</strong></p>
+            <p>Prime 4: <strong>{{ result.m3 }}</strong></p>
+            <p>Share 1 (s1, m1): <strong>{{ result.share0 }}, {{ result.m0 }}</strong></p>
+            <p>Share 2 (s2, m2): <strong>{{ result.share1 }}, {{ result.m1 }}</strong></p>
+            <p>Share 3 (s3, m3): <strong>{{ result.share2 }}, {{ result.m2 }}</strong></p>
+            <p>Share 4 (s4, m4): <strong>{{ result.share3 }}, {{ result.m3 }}</strong></p>
+            <p>Secret made using 2 shares: <strong>{{ result.two_secret }}</strong></p>
+            <p>Secret made using 3 shares: <strong>{{ result.three_secret }}</strong></p>
+            <a href="/">Back to HomePage</a>
+          </div>
+        </section>
+      </div>
+    
+</body>
+<script>
+    let isInView = (elementClassName) => {
+  const revealPoint = 150;
+  const windowHeight = window.innerHeight;
+  const elem = document.querySelectorAll(elementClassName);
+  
+  for(var item = 0; item < elem.length; item++){
+    
+    var revealTop = elem[item].getBoundingClientRect().top;
+    var revealBottom = elem[item].getBoundingClientRect().bottom;
+    
+    if(revealTop < windowHeight - revealPoint){
+      elem[item].classList.remove('faded_out');
+    }else{
+      elem[item].classList.add('faded_out');
+    }
+    
+    if(revealBottom < 0 - revealPoint){
+      elem[item].classList.add('faded_out');
+    }
+  }
+};
+
+let handleEvent = (event) => {
+  // console.log("scrolling");
+  isInView('.reveal');
+}
+
+window.addEventListener('scroll', handleEvent);
+</script>
+</html>
+
+

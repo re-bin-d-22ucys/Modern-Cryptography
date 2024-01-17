@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blakley's Secret Sharing Result</title>
+    <style>
+        h1{
+  font-weight:normal;
+  font-size:2em;
+}
+
+.wrapper{
+  width:100vw;
+  height:100vh;
+}
+
+section{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 50%;
+  height:98vh;
+  margin: auto;
+}
+
+.pageIntro{
+  font-size:3em;
+  font-weight: 900;
+  text-align:center;
+}
+
+.wrapper div{
+  height: 250px;
+}
+
+
+.reveal{
+  opacity: 1;
+  transform: none;
+  transition: opacity ease-out 500ms, transform ease-out 500ms, filter ease-out 500ms;
+}
+
+.faded_out {
+  opacity: 0;
+  transform: scale(0.8,0.8);
+  filter: blur(3px);
+}
+    </style>
+</head>
+<body>
+
+    <div class="wrapper">
+        <section><h1 class="pageIntro reveal">Blakley's Secret Sharing Result<br/>Scroll to reveal the answer</h1></section>
+        <section id="one">
+          <div class="reveal faded_out">
+            <h2>
+                <p>Entered secret: {{ secret }}</p>
+                <p>Shares: {{ shares }}</p>
+                <p>Reconstructed Secret: {{ reconstructed_secret }}</p>
+                <a href="/">Back to HomePage</a>
+            </h2>
+          </div>
+        </section>
+      </div>
+    
+</body>
+<script>
+    let isInView = (elementClassName) => {
+  const revealPoint = 150;
+  const windowHeight = window.innerHeight;
+  const elem = document.querySelectorAll(elementClassName);
+  
+  for(var item = 0; item < elem.length; item++){
+    
+    var revealTop = elem[item].getBoundingClientRect().top;
+    var revealBottom = elem[item].getBoundingClientRect().bottom;
+    
+    if(revealTop < windowHeight - revealPoint){
+      elem[item].classList.remove('faded_out');
+    }else{
+      elem[item].classList.add('faded_out');
+    }
+    
+    if(revealBottom < 0 - revealPoint){
+      elem[item].classList.add('faded_out');
+    }
+  }
+};
+
+let handleEvent = (event) => {
+  // console.log("scrolling");
+  isInView('.reveal');
+}
+
+window.addEventListener('scroll', handleEvent);
+</script>
+</html>
