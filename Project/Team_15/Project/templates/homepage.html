@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threshold Secret Sharing Methods</title>
+    <style>
+      body {
+        background: #e0e5ec;
+      }
+      h1 {
+        position: relative;
+        text-align: center;
+        color: #353535;
+        font-size: 50px;
+        font-family: "Cormorant Garamond", serif;
+      }
+      h2{
+        text-align: center;
+      }
+
+      p {
+        font-family: 'Lato', sans-serif;
+        font-weight: 300;
+        text-align: center;
+        font-size: 18px;
+        color: #676767;
+      }
+      .frame {
+        width: 90%;
+        margin: 40px auto;
+        text-align: center;
+      }
+      button {
+        margin: 20px;
+      }
+      .custom-btn {
+        width: 130px;
+        height: 40px;
+        color: #fff;
+        border-radius: 5px;
+        padding: 10px 25px;
+        font-family: 'Lato', sans-serif;
+        font-weight: 500;
+        background: transparent;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        display: inline-block;
+        box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+        7px 7px 20px 0px rgba(0,0,0,.1),
+        4px 4px 5px 0px rgba(0,0,0,.1);
+        outline: none;
+      }
+
+/* 5 */
+      .btn-5 {
+        width: 130px;
+        height: 40px;
+        line-height: 42px;
+        padding: 0;
+        border: none;
+        background: rgb(255,27,0);
+        background: linear-gradient(0deg, rgba(255,27,0,1) 0%, rgba(251,75,2,1) 100%);
+      }
+      .btn-5:hover {
+        color: #ff671f;
+        background: transparent;
+        box-shadow:none;
+        }
+        .btn-5:before,
+        .btn-5:after{
+        content:'';
+        position:absolute;
+        top:0;
+        right:0;
+        height:2px;
+        width:0;
+        background: #ff671f;
+        box-shadow:
+        -1px -1px 5px 0px #fff,
+        7px 7px 20px 0px #0003,
+        4px 4px 5px 0px #0002;
+        transition:400ms ease all;
+        }
+        .btn-5:after{
+        right:inherit;
+        top:inherit;
+        left:0;
+        bottom:0;
+        }
+        .btn-5:hover:before,
+        .btn-5:hover:after{
+        width:100%;
+        transition:800ms ease all;
+        }
+
+
+        /* 9 */
+        .btn-9 {
+        border: none;
+        transition: all 0.3s ease;
+        overflow: hidden;
+        }
+        .btn-9:after {
+        position: absolute;
+        content: " ";
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #1fd1f9;
+        background-image: linear-gradient(315deg, #046A38 0%, #046A38 74%);
+        transition: all 0.3s ease;
+        }
+        .btn-9:hover {
+        background: transparent;
+        box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                    -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+          inset -4px -4px 6px 0 rgba(255,255,255,.5),
+          inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+        color: #fff;
+        }
+        .btn-9:hover:after {
+        -webkit-transform: scale(2) rotate(180deg);
+        transform: scale(2) rotate(180deg);
+        box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+                    -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+          inset -4px -4px 6px 0 rgba(255,255,255,.5),
+          inset 4px 4px 6px 0 rgba(116, 125, 136, .3);
+        }
+
+
+/* 12 */
+        .btn-12{
+        position: relative;
+        right: 20px;
+        bottom: 24px;
+        border:none;
+        box-shadow: none;
+        width: 130px;
+        height: 40px;
+        line-height: 42px;
+        -webkit-perspective: 230px;
+        perspective: 230px;
+        }
+        .btn-12 span {
+        background: rgb(0,172,238);
+        background: linear-gradient(0deg, rgba(0,172,238,1) 0%, #06038d 100%);
+        display: block;
+        position: absolute;
+        width: 130px;
+        height: 40px;
+        box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+        7px 7px 20px 0px rgba(0,0,0,.1),
+        4px 4px 5px 0px rgba(0,0,0,.1);
+        border-radius: 5px;
+        margin:0;
+        text-align: center;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-transition: all .3s;
+        transition: all .3s;
+        }
+        .btn-12 span:nth-child(1) {
+        box-shadow:
+        -7px -7px 20px 0px #fff9,
+        -4px -4px 5px 0px #fff9,
+        7px 7px 20px 0px #0002,
+        4px 4px 5px 0px #0001;
+        -webkit-transform: rotateX(90deg);
+        -moz-transform: rotateX(90deg);
+        transform: rotateX(90deg);
+        -webkit-transform-origin: 50% 50% -20px;
+        -moz-transform-origin: 50% 50% -20px;
+        transform-origin: 50% 50% -20px;
+        }
+        .btn-12 span:nth-child(2) {
+        -webkit-transform: rotateX(0deg);
+        -moz-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+        -webkit-transform-origin: 50% 50% -20px;
+        -moz-transform-origin: 50% 50% -20px;
+        transform-origin: 50% 50% -20px;
+        }
+        .btn-12:hover span:nth-child(1) {
+        box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+        7px 7px 20px 0px rgba(0,0,0,.1),
+        4px 4px 5px 0px rgba(0,0,0,.1);
+        -webkit-transform: rotateX(0deg);
+        -moz-transform: rotateX(0deg);
+        transform: rotateX(0deg);
+        }
+        .btn-12:hover span:nth-child(2) {
+        box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+        7px 7px 20px 0px rgba(0,0,0,.1),
+        4px 4px 5px 0px rgba(0,0,0,.1);
+        color: transparent;
+        -webkit-transform: rotateX(-90deg);
+        -moz-transform: rotateX(-90deg);
+        transform: rotateX(-90deg);
+        }
+  </style>
+</head>
+
+<body>
+    <h1>Threshold Secret Sharing Methods</h1>
+
+    <p>Welcome to the homepage for the implementation of three threshold secret sharing methods: Shamir, Blakley, and Mignotte.</p>
+    <br><br><br>
+    <h2>Select a Method</h2>
+
+    <div class="frame">
+      <a style="color: #fff;" href="shamir.html"><button class="custom-btn btn-5" id="button1" onclick="sendButtonClick('button1')"><span>Shamir</span></button></a>
+      <button class="custom-btn btn-12" id="button2" onclick="sendButtonClick('button2')"><a style="color: #fff;" href="blakley"><span style="color: white;background-color: #06038d;">Click!</span></a><span>Blakley</span></button>
+      <a style="color: #fff;" href="mignotte.html"><button class="custom-btn btn-9" id="button3" onclick="sendButtonClick('button3')"><span>Mignotte</span></button></a>
+    </div>
+
+  <script>
+    function sendButtonClick(buttonId) {
+      // Create an XMLHttpRequest object
+      var xhr = new XMLHttpRequest();
+
+      // Define the callback function
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          // Handle the response from the server if needed
+          console.log(xhr.responseText);
+        }
+      };
+
+      // Open a POST request to the Flask route
+      xhr.open("POST", "/button_click", true);
+
+      // Set the request header
+      xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+
+      // Send the buttonId as JSON data in the request body
+      xhr.send(JSON.stringify({ buttonId: buttonId }));
+    }
+  </script>
+</body>
+
+</html>
